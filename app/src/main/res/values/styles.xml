@@ -1,0 +1,163 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.Transparent.SplashScreen" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--        <item name="android:windowTranslucentStatus">true</item>-->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:statusBarColor">@color/white</item>
+
+    </style>
+
+    <style name="AppTheme.StartUp" parent="Theme.AppCompat">
+        <item name="colorPrimary">#122259</item>
+        <item name="colorPrimaryDark">#122259</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/crete_round</item>
+    </style>
+
+    <style name="AppTheme.Transparent.Startup" parent="Theme.AppCompat.Light">
+        <!--        <item name="android:windowTranslucentStatus">true</item>-->
+        <item name="colorPrimary">#122259</item>
+        <item name="windowActionBar">true</item>
+        <item name="android:actionBarTabTextStyle">@font/amaranth</item>
+        <item name="android:actionBarTheme">@color/white</item>
+        <item name="actionBarSize">@dimen/font_40sp</item>
+        <item name="android:statusBarColor">#122259</item>
+    </style>
+
+    <style name="AppTheme.Transparent1" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--        <item name="android:windowTranslucentStatus">true</item>-->
+        <item name="colorPrimary">@color/blueLight_bg</item>
+        <item name="colorPrimaryDark">@color/darkBlue</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:statusBarColor">#122259</item>
+
+    </style>
+
+    <style name="TextViewStartUp">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/font_17sp</item>
+        <item name="android:layout_margin">@dimen/margin_4dp</item>
+        <item name="android:fontFamily">@font/amaranth</item>
+    </style>
+
+    <style name="IconMiniStartup">
+        <item name="android:layout_margin">3dp</item>
+    </style>
+
+    <style name="TextViewAntenaStartUp">
+        <item name="android:textColor">@color/whiteSmoke</item>
+        <item name="android:textSize">@dimen/font_20sp</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:fontFamily">@font/amaranth</item>
+    </style>
+
+    <style name="TextViewAntenaDetail">
+        <item name="android:textColor">@color/whiteSmoke</item>
+        <item name="android:textSize">27sp</item>
+        <item name="android:fontFamily">@font/amaranth</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">18dp</item>
+    </style>
+
+    <style name="TextViewTempDetail">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/font_38sp</item>
+        <item name="android:fontFamily">@font/amaranth</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TextViewDateDetail">
+        <item name="android:textColor">@color/whiteSmoke</item>
+        <item name="android:textSize">@dimen/font_20sp</item>
+        <item name="android:fontFamily">@font/amaranth</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TextViewMenuBottomDetail">
+        <item name="android:textColor">@color/whiteSmoke</item>
+        <item name="android:textSize">@dimen/font_13sp</item>
+        <item name="android:layout_marginTop">@dimen/margin_5dp</item>
+        <item name="android:fontFamily">@font/amaranth</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="TextViewButtonDay">
+        <item name="android:textColor">@color/whiteTransparent</item>
+        <item name="android:textSize">@dimen/font_14sp</item>
+        <item name="android:fontFamily">@font/amaranth</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TextViewButtonDayOnClick">
+        <item name="android:textColor">@color/whiteSmoke</item>
+        <item name="android:textSize">@dimen/font_14sp</item>
+        <item name="android:fontFamily">@font/amaranth</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TextViewMenuBottomDetail1">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/font_17sp</item>
+        <item name="android:layout_marginTop">@dimen/margin_5dp</item>
+        <item name="android:layout_marginBottom">@dimen/margin_5dp</item>
+        <item name="android:fontFamily">@font/amaranth</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="TextViewMenuBottomAntenaOnClick">
+        <item name="android:textColor">@color/whiteSmoke</item>
+        <item name="android:textSize">@dimen/font_17sp</item>
+        <item name="android:fontFamily">@font/amaranth</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/bg_edit_rounded_top</item>
+    </style>
+
+    <style name="TextViewMenuBottomAntena">
+        <item name="android:textColor">@color/whiteSmoke</item>
+        <item name="android:textSize">@dimen/font_16sp</item>
+        <item name="android:fontFamily">@font/amaranth</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/bottom_menu_onclick</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="LineChart">
+        <item name="android:layout_weight">0.8</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+    <style name="TextViewWidget">
+        <item name="android:textSize">@dimen/font_18sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:fontFamily">@font/amaranth</item>
+    </style>
+
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
+
+    </style>
+</resources>

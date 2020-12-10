@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="lapan.go.id.monitoring.StartupActivity">
+
+<!--    <item-->
+<!--        android:id="@+id/change_theme"-->
+<!--        android:orderInCategory="100"-->
+<!--        android:title="@string/change_theme"-->
+<!--        app:showAsAction="never" />-->
+<!--    <item-->
+<!--        android:id="@+id/settings"-->
+<!--        android:orderInCategory="100"-->
+<!--        android:title="@string/title_activity_settings"-->
+<!--        app:showAsAction="never" />-->
+    <item
+        android:id="@+id/info_app"
+        android:orderInCategory="100"
+        android:title="@string/info_app"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_info_whitesmoke"/>
+</menu>

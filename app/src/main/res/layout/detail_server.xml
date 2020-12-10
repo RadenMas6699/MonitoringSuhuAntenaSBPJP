@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailServer"
+    android:orientation="vertical"
+    android:background="@drawable/bg_gradient"
+    tools:ignore="NestedWeights">
+
+    <!--    LinearLayout1-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/ruang_server"
+            style="@style/TextViewAntenaDetail"
+            />
+    </LinearLayout>
+
+
+
+    <!--    LinearLayout2-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/tvTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/nol"
+                style="@style/TextViewTempDetail" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/degree_c"
+                style="@style/TextViewTempDetail"/>
+        </LinearLayout>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/main_screen_vertical_separator" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/tvHum"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/nol"
+                style="@style/TextViewTempDetail" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/percent"
+                style="@style/TextViewTempDetail"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+    <!--    LinearLayout3-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/margin_10dp">
+        <TextView
+            android:id="@+id/tvJam"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/jam_nol"
+            style="@style/TextViewDateDetail"/>
+        <TextView
+            android:id="@+id/tvTgl"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/tgl_default"
+            style="@style/TextViewDateDetail"/>
+    </LinearLayout>
+
+
+
+
+    <!--    LinearLayout4-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5">
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+
+
+    <!--    LinearLayout5-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.24"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_btn_whitetransparent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp">
+        <TextView
+            android:id="@+id/tvSortLive"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/live"
+            style="@style/TextViewButtonDayOnClick"
+            android:background="@drawable/bg_btn_whitesmoke"/>
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tvSortClock"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/jam"
+            style="@style/TextViewButtonDayOnClick"/>
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tvSortDay"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/day"
+            style="@style/TextViewButtonDayOnClick"/>
+    </LinearLayout>
+
+
+
+    <!--    LinearLayout6-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.7"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/margin_12dp">
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/bg_white_transparent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/status"
+                style="@style/TextViewMenuBottomDetail"/>
+            <TextView
+                android:id="@+id/tvKondisi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/strip"
+                style="@style/TextViewMenuBottomDetail1"/>
+        </LinearLayout>
+        <Space
+            android:layout_width="25dp"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/bg_white_transparent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/min"
+                style="@style/TextViewMenuBottomDetail"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/temp_min"
+                style="@style/TextViewMenuBottomDetail1"/>
+        </LinearLayout>
+        <Space
+            android:layout_width="25dp"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/bg_white_transparent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/max"
+                style="@style/TextViewMenuBottomDetail"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/temp_max"
+                style="@style/TextViewMenuBottomDetail1"/>
+        </LinearLayout>
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+
+    <!--    LinearLayout7-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/margin_10dp">
+        <TextView
+            android:id="@+id/tvBtnOrbital"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/orbital"
+            style="@style/TextViewMenuBottomAntena"/>
+        <TextView
+            android:id="@+id/tvBtnViasat"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/viasat"
+            style="@style/TextViewMenuBottomAntena"/>
+        <TextView
+            android:id="@+id/tvBtnZodiac"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/zodiac"
+            style="@style/TextViewMenuBottomAntena" />
+        <TextView
+            android:id="@+id/tvBtnServer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/server"
+            style="@style/TextViewMenuBottomAntenaOnClick"/>
+    </LinearLayout>
+
+</LinearLayout>

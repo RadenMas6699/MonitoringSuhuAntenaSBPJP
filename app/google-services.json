@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1071297650254",
+    "firebase_url": "https://suhuantena8-f9231.firebaseio.com",
+    "project_id": "suhuantena8-f9231",
+    "storage_bucket": "suhuantena8-f9231.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1071297650254:android:9cbcd3940ea23bb237ad1f",
+        "android_client_info": {
+          "package_name": "lapan.go.id.monitoring"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1071297650254-k1b01jmv8eh31a7opgctb3rfl345uhuh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "lapan.go.id.monitoring",
+            "certificate_hash": "20fae74255c70d5e6f10cd1a08df0866086da54e"
+          }
+        },
+        {
+          "client_id": "1071297650254-sqjujbl26mu7pvo5a34h3o779634s177.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDesJgjkx3BuhaOyIh9robBUJ5R0RDmYXw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1071297650254-sqjujbl26mu7pvo5a34h3o779634s177.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
