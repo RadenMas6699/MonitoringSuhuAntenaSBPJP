@@ -20,30 +20,3 @@ public class DataPoints {
         return temperature;
     }
 }
-
-
-
-
-
-
-//package logo_lapan.go.id.monitoring;
-//
-//public class DataPoints {
-//    int xValue, yValue;
-//
-//    public DataPoints() {
-//    }
-//
-//    public DataPoints(int xValue, int yValue) {
-//        this.xValue = xValue;
-//        this.yValue = yValue;
-//    }
-//
-//    public int getxValue() {
-//        return xValue;
-//    }
-//
-//    public int getyValue() {
-//        return yValue;
-//    }
-//}

@@ -15,11 +15,6 @@ import com.github.mikephil.charting.utils.Utils;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
-/**
- * Custom implementation of the MarkerView.
- *
- * @author Philipp Jahoda
- */
 @SuppressLint("ViewConstructor")
 public class MyMarkerView extends MarkerView {
 

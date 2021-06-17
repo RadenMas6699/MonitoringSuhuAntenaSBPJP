@@ -76,7 +76,9 @@ public class DetailOrbital extends AppCompatActivity {
         tvJam = findViewById(R.id.tvJam);
         tvTgl = findViewById(R.id.tvTgl);
         tvKondisi = findViewById(R.id.tvKondisi);
+
         chart = findViewById(R.id.chart);
+
         tvSortLive = findViewById(R.id.tvSortLive);
         tvSortClock = findViewById(R.id.tvSortClock);
         tvSortDay = findViewById(R.id.tvSortDay);
@@ -195,34 +197,44 @@ public class DetailOrbital extends AppCompatActivity {
 
     public void GraphSuhu(final int limit) {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+
         DatabaseReference databaseReference = firebaseDatabase.getReference(path);
+
         Query query = databaseReference.orderByKey().limitToLast(limit);
+
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 ArrayList<Entry> data = new ArrayList<>();
-                ArrayList<Integer> colors = new ArrayList<>();
+
+//                ArrayList<Integer> colors = new ArrayList<>();
+
                 if (dataSnapshot.hasChildren()) {
                     for (DataSnapshot child : dataSnapshot.getChildren()) {
                         DataPoints dataPoints = child.getValue(DataPoints.class);
                         data.add(new Entry(dataPoints.getTime(), dataPoints.getTemperature()));
-                        if ( dataPoints.getTemperature() >= 0 && dataPoints.getTemperature() < 20 ){
-                            colors.add(getResources().getColor( R.color.blueLight));
-                        } else if ( dataPoints.getTemperature() >= 20 && dataPoints.getTemperature() <= 35 ){
-                            colors.add(getResources().getColor( R.color.blue_light));
-                        } else if ( dataPoints.getTemperature() > 35 && dataPoints.getTemperature() <= 100 ){
-                            colors.add(getResources().getColor( R.color.hot_orange));
-                        }
+
+
+//                        if ( dataPoints.getTemperature() >= 0 && dataPoints.getTemperature() < 20 ){
+//                            colors.add(getResources().getColor( R.color.blueLight));
+//                        } else if ( dataPoints.getTemperature() >= 20 && dataPoints.getTemperature() <= 35 ){
+//                            colors.add(getResources().getColor( R.color.blue_light));
+//                        } else if ( dataPoints.getTemperature() > 35 && dataPoints.getTemperature() <= 100 ){
+//                            colors.add(getResources().getColor( R.color.hot_orange));
+//                        }
+
+
+
                     }
                     showChart(data);
-                    lineDataSet.setColors(colors);
-                    if (limit == 20) {
-                        lineDataSet.setDrawCircles(true);
-                        lineDataSet.setCircleColors(colors);
-                        lineDataSet.setCircleSize(1.5f);
-                    } else {
-                        lineDataSet.setDrawCircles(false);
-                    }
+//                    lineDataSet.setColors(colors);
+//                    if (limit == 20) {
+//                        lineDataSet.setDrawCircles(true);
+//                        lineDataSet.setCircleColors(colors);
+//                        lineDataSet.setCircleSize(1.5f);
+//                    } else {
+//                        lineDataSet.setDrawCircles(false);
+//                    }
                     chart.invalidate();
                 } else {
                     chart.clear();
@@ -241,15 +253,19 @@ public class DetailOrbital extends AppCompatActivity {
         lineDataSet.setValues(data);
         lineDataSet.setLabel("DataSet 1");
         lineDataSet.setDrawFilled(true);
-        if (Utils.getSDKInt() >= 18) {
-            Drawable drawable = ContextCompat.getDrawable(this, R.drawable.fade_blue_light);
-            lineDataSet.setFillDrawable(drawable);
-        } else {
-            lineDataSet.setFillAlpha(5);
-        }
+
+//        if (Utils.getSDKInt() >= 18) {
+//            Drawable drawable = ContextCompat.getDrawable(this, R.drawable.fade_blue_light);
+//            lineDataSet.setFillDrawable(drawable);
+//        } else {
+//            lineDataSet.setFillAlpha(5);
+//        }
+
         lineDataSet.setLineWidth(1.5f);
+
 //        lineDataSet.setMode(LineDataSet.Mode.CUBIC_BEZIER);
 //        lineDataSet.setCubicIntensity(0.05f);
+
         lineDataSet.setDrawValues(false);
         iLineDataSets.clear();
         iLineDataSets.add(lineDataSet);
@@ -266,8 +282,7 @@ public class DetailOrbital extends AppCompatActivity {
             @Override
             public String getFormattedValue(float value) {
                 Date date = new Date((long) value);
-                SimpleDateFormat fmt;
-                fmt = new SimpleDateFormat("HH:mm zz");
+                SimpleDateFormat fmt = new SimpleDateFormat("HH:mm zz");
                 fmt.setTimeZone(TimeZone.getDefault());
                 String s = fmt.format(date);
                 return s;
@@ -277,12 +292,14 @@ public class DetailOrbital extends AppCompatActivity {
         YAxis yAxisL = chart.getAxis(YAxis.AxisDependency.LEFT);
         yAxisL.setDrawGridLines(false);
         yAxisL.setDrawLabels(false);
-        yAxisL.setAxisMinimum(15);
-        yAxisL.setAxisMaximum(45);
 
-        MyMarkerView mv = new MyMarkerView(this, R.layout.custom_marker_view);
-        mv.setChartView(chart);
-        chart.setMarker(mv);
+//        yAxisL.setAxisMinimum(15);
+//        yAxisL.setAxisMaximum(45);
+
+//        MyMarkerView mv = new MyMarkerView(this, R.layout.custom_marker_view);
+//        mv.setChartView(chart);
+//        chart.setMarker(mv);
+
         chart.getLegend().setEnabled(false);
         chart.getDescription().setEnabled(false);
         chart.getAxisRight().setEnabled(false);

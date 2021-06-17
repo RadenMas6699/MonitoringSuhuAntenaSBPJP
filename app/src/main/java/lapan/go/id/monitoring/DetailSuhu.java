@@ -18,9 +18,11 @@ import java.util.Locale;
 public class DetailSuhu {
     SimpleDateFormat jam = new SimpleDateFormat("HH:mm", Locale.getDefault());
     SimpleDateFormat tgl = new SimpleDateFormat("dd MMM yyyy", Locale.getDefault());
+
     DatabaseReference dbRef;
     String path;
     Query query;
+
     int limit;
     TextView tvTemp, tvHum, tvJam, tvTgl, tvKondisi;
 
@@ -47,6 +49,8 @@ public class DetailSuhu {
                     String datatime = child.child("time").getValue().toString();
                     String datatemp = child.child("temperature").getValue().toString();
                     String datahum = child.child("humidity").getValue().toString();
+
+
                     long time = Long.parseLong(datatime);
                     int temp = Integer.parseInt(datatemp);
                     if (temp > 35){

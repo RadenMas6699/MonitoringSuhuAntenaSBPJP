@@ -244,12 +244,7 @@ public class DetailViasat extends AppCompatActivity {
         lineDataSet.setValues(data);
         lineDataSet.setLabel("DataSet 1");
         lineDataSet.setDrawFilled(true);
-        if (Utils.getSDKInt() >= 18) {
-            Drawable drawable = ContextCompat.getDrawable(this, R.drawable.fade_blue_light);
-            lineDataSet.setFillDrawable(drawable);
-        } else {
-            lineDataSet.setFillAlpha(5);
-        }
+
         lineDataSet.setLineWidth(1.5f);
 //        lineDataSet.setMode(LineDataSet.Mode.CUBIC_BEZIER);
 //        lineDataSet.setCubicIntensity(0.05f);
