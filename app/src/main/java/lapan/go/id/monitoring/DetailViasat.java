@@ -90,76 +90,58 @@ public class DetailViasat extends AppCompatActivity {
     }
 
     private void onClick() {
-        tvSortLive.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvSortLive.setBackground(getResources().getDrawable(R.drawable.bg_btn_whitesmoke));
-                tvSortLive.setTextColor(getResources().getColor(R.color.whiteSmoke));
-                tvSortClock.setBackground(getResources().getDrawable(R.drawable.bg_btn_transparent));
-                tvSortClock.setTextColor(getResources().getColor(R.color.whiteTransparent));
-                tvSortDay.setBackground(getResources().getDrawable(R.drawable.bg_btn_transparent));
-                tvSortDay.setTextColor(getResources().getColor(R.color.whiteTransparent));
-                chart.invalidate();
-                retrieveData();
-            }
+        tvSortLive.setOnClickListener(v -> {
+            tvSortLive.setBackground(getResources().getDrawable(R.drawable.bg_btn_whitesmoke));
+            tvSortLive.setTextColor(getResources().getColor(R.color.whiteSmoke));
+            tvSortClock.setBackground(getResources().getDrawable(R.drawable.bg_btn_transparent));
+            tvSortClock.setTextColor(getResources().getColor(R.color.whiteTransparent));
+            tvSortDay.setBackground(getResources().getDrawable(R.drawable.bg_btn_transparent));
+            tvSortDay.setTextColor(getResources().getColor(R.color.whiteTransparent));
+            chart.invalidate();
+            retrieveData();
         });
 
-        tvSortClock.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvSortLive.setBackground(getResources().getDrawable(R.drawable.bg_btn_transparent));
-                tvSortLive.setTextColor(getResources().getColor(R.color.whiteTransparent));
-                tvSortClock.setBackground(getResources().getDrawable(R.drawable.bg_btn_whitesmoke));
-                tvSortClock.setTextColor(getResources().getColor(R.color.whiteSmoke));
-                tvSortDay.setBackground(getResources().getDrawable(R.drawable.bg_btn_transparent));
-                tvSortDay.setTextColor(getResources().getColor(R.color.whiteTransparent));
-                chart.invalidate();
-                retrieveDataClock();
-            }
+        tvSortClock.setOnClickListener(v -> {
+            tvSortLive.setBackground(getResources().getDrawable(R.drawable.bg_btn_transparent));
+            tvSortLive.setTextColor(getResources().getColor(R.color.whiteTransparent));
+            tvSortClock.setBackground(getResources().getDrawable(R.drawable.bg_btn_whitesmoke));
+            tvSortClock.setTextColor(getResources().getColor(R.color.whiteSmoke));
+            tvSortDay.setBackground(getResources().getDrawable(R.drawable.bg_btn_transparent));
+            tvSortDay.setTextColor(getResources().getColor(R.color.whiteTransparent));
+            chart.invalidate();
+            retrieveDataClock();
         });
 
-        tvSortDay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvSortLive.setBackground(getResources().getDrawable(R.drawable.bg_btn_transparent));
-                tvSortLive.setTextColor(getResources().getColor(R.color.whiteTransparent));
-                tvSortClock.setBackground(getResources().getDrawable(R.drawable.bg_btn_transparent));
-                tvSortClock.setTextColor(getResources().getColor(R.color.whiteTransparent));
-                tvSortDay.setBackground(getResources().getDrawable(R.drawable.bg_btn_whitesmoke));
-                tvSortDay.setTextColor(getResources().getColor(R.color.whiteSmoke));
-                chart.invalidate();
-                retrieveDataDay();
-            }
+        tvSortDay.setOnClickListener(v -> {
+            tvSortLive.setBackground(getResources().getDrawable(R.drawable.bg_btn_transparent));
+            tvSortLive.setTextColor(getResources().getColor(R.color.whiteTransparent));
+            tvSortClock.setBackground(getResources().getDrawable(R.drawable.bg_btn_transparent));
+            tvSortClock.setTextColor(getResources().getColor(R.color.whiteTransparent));
+            tvSortDay.setBackground(getResources().getDrawable(R.drawable.bg_btn_whitesmoke));
+            tvSortDay.setTextColor(getResources().getColor(R.color.whiteSmoke));
+            chart.invalidate();
+            retrieveDataDay();
         });
 
-        tvBtnOrbital.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent orbital = new Intent(DetailViasat.this, DetailOrbital.class);
-                startActivity(orbital);
-                overridePendingTransition(R.anim.move_left_in_activity, R.anim.move_right_out_activity);
-                finish();
-            }
+        tvBtnOrbital.setOnClickListener(v -> {
+            Intent orbital = new Intent(DetailViasat.this, DetailOrbital.class);
+            startActivity(orbital);
+            overridePendingTransition(R.anim.move_left_in_activity, R.anim.move_right_out_activity);
+            finish();
         });
 
-        tvBtnZodiac.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent zodiac = new Intent(DetailViasat.this, DetailZodiac.class);
-                startActivity(zodiac);
-                overridePendingTransition(R.anim.move_left_out_activity, R.anim.move_right_in_activity);
-                finish();
-            }
+        tvBtnZodiac.setOnClickListener(v -> {
+            Intent zodiac = new Intent(DetailViasat.this, DetailZodiac.class);
+            startActivity(zodiac);
+            overridePendingTransition(R.anim.move_left_out_activity, R.anim.move_right_in_activity);
+            finish();
         });
 
-        tvBtnServer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent server = new Intent(DetailViasat.this, DetailServer.class);
-                startActivity(server);
-                overridePendingTransition(R.anim.move_left_out_activity, R.anim.move_right_in_activity);
-                finish();
-            }
+        tvBtnServer.setOnClickListener(v -> {
+            Intent server = new Intent(DetailViasat.this, DetailServer.class);
+            startActivity(server);
+            overridePendingTransition(R.anim.move_left_out_activity, R.anim.move_right_in_activity);
+            finish();
         });
     }
 

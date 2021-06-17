@@ -129,33 +129,21 @@ public class StartupActivity extends AppCompatActivity {
     }
 
     private void onClick() {
-        btnAntenaOrbital.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(StartupActivity.this, DetailOrbital.class));
-                overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
-            }
+        btnAntenaOrbital.setOnClickListener(v -> {
+            startActivity(new Intent(StartupActivity.this, DetailOrbital.class));
+            overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
         });
-        btnAntenaViasat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(StartupActivity.this, DetailViasat.class));
-                overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
-            }
+        btnAntenaViasat.setOnClickListener(v -> {
+            startActivity(new Intent(StartupActivity.this, DetailViasat.class));
+            overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
         });
-        btnAntenaZodiac.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(StartupActivity.this, DetailZodiac.class));
-                overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
-            }
+        btnAntenaZodiac.setOnClickListener(v -> {
+            startActivity(new Intent(StartupActivity.this, DetailZodiac.class));
+            overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
         });
-        btnServer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(StartupActivity.this, DetailServer.class));
-                overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
-            }
+        btnServer.setOnClickListener(v -> {
+            startActivity(new Intent(StartupActivity.this, DetailServer.class));
+            overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
         });
     }
 

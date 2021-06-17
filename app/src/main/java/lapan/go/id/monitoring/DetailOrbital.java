@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -39,7 +40,7 @@ public class DetailOrbital extends AppCompatActivity {
             tvBtnViasat, tvBtnZodiac, tvBtnServer;
 
     LineChart chart;
-    LineDataSet lineDataSet = new LineDataSet(null,null);
+    LineDataSet lineDataSet = new LineDataSet(null, null);
     ArrayList<ILineDataSet> iLineDataSets = new ArrayList<>();
     LineData lineData;
 
@@ -92,92 +93,71 @@ public class DetailOrbital extends AppCompatActivity {
     }
 
     private void onClick() {
-        tvSortLive.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvSortLive.setBackground(getResources().getDrawable(R.drawable.bg_btn_whitesmoke));
-                tvSortLive.setTextColor(getResources().getColor(R.color.whiteSmoke));
-                tvSortClock.setBackground(getResources().getDrawable(R.drawable.bg_btn_transparent));
-                tvSortClock.setTextColor(getResources().getColor(R.color.whiteTransparent));
-                tvSortDay.setBackground(getResources().getDrawable(R.drawable.bg_btn_transparent));
-                tvSortDay.setTextColor(getResources().getColor(R.color.whiteTransparent));
-                chart.invalidate();
-                retrieveData();
-            }
+        tvSortLive.setOnClickListener(v -> {
+            tvSortLive.setBackground(getResources().getDrawable(R.drawable.bg_btn_whitesmoke));
+            tvSortLive.setTextColor(getResources().getColor(R.color.whiteSmoke));
+            tvSortClock.setBackground(getResources().getDrawable(R.drawable.bg_btn_transparent));
+            tvSortClock.setTextColor(getResources().getColor(R.color.whiteTransparent));
+            tvSortDay.setBackground(getResources().getDrawable(R.drawable.bg_btn_transparent));
+            tvSortDay.setTextColor(getResources().getColor(R.color.whiteTransparent));
+            chart.invalidate();
+            retrieveData();
         });
 
-        tvSortClock.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvSortLive.setBackground(getResources().getDrawable(R.drawable.bg_btn_transparent));
-                tvSortLive.setTextColor(getResources().getColor(R.color.whiteTransparent));
-                tvSortClock.setBackground(getResources().getDrawable(R.drawable.bg_btn_whitesmoke));
-                tvSortClock.setTextColor(getResources().getColor(R.color.whiteSmoke));
-                tvSortDay.setBackground(getResources().getDrawable(R.drawable.bg_btn_transparent));
-                tvSortDay.setTextColor(getResources().getColor(R.color.whiteTransparent));
-                chart.invalidate();
-                retrieveDataClock();
-            }
+        tvSortClock.setOnClickListener(v -> {
+            tvSortLive.setBackground(getResources().getDrawable(R.drawable.bg_btn_transparent));
+            tvSortLive.setTextColor(getResources().getColor(R.color.whiteTransparent));
+            tvSortClock.setBackground(getResources().getDrawable(R.drawable.bg_btn_whitesmoke));
+            tvSortClock.setTextColor(getResources().getColor(R.color.whiteSmoke));
+            tvSortDay.setBackground(getResources().getDrawable(R.drawable.bg_btn_transparent));
+            tvSortDay.setTextColor(getResources().getColor(R.color.whiteTransparent));
+            chart.invalidate();
+            retrieveDataClock();
         });
 
-        tvSortDay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvSortLive.setBackground(getResources().getDrawable(R.drawable.bg_btn_transparent));
-                tvSortLive.setTextColor(getResources().getColor(R.color.whiteTransparent));
-                tvSortClock.setBackground(getResources().getDrawable(R.drawable.bg_btn_transparent));
-                tvSortClock.setTextColor(getResources().getColor(R.color.whiteTransparent));
-                tvSortDay.setBackground(getResources().getDrawable(R.drawable.bg_btn_whitesmoke));
-                tvSortDay.setTextColor(getResources().getColor(R.color.whiteSmoke));
-                chart.invalidate();
-                retrieveDataDay();
-            }
+        tvSortDay.setOnClickListener(v -> {
+            tvSortLive.setBackground(getResources().getDrawable(R.drawable.bg_btn_transparent));
+            tvSortLive.setTextColor(getResources().getColor(R.color.whiteTransparent));
+            tvSortClock.setBackground(getResources().getDrawable(R.drawable.bg_btn_transparent));
+            tvSortClock.setTextColor(getResources().getColor(R.color.whiteTransparent));
+            tvSortDay.setBackground(getResources().getDrawable(R.drawable.bg_btn_whitesmoke));
+            tvSortDay.setTextColor(getResources().getColor(R.color.whiteSmoke));
+            chart.invalidate();
+            retrieveDataDay();
         });
 
-        tvBtnViasat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(DetailOrbital.this, DetailViasat.class));
-                overridePendingTransition(R.anim.move_left_out_activity, R.anim.move_right_in_activity);
-                finish();
-            }
+        tvBtnViasat.setOnClickListener(v -> {
+            startActivity(new Intent(DetailOrbital.this, DetailViasat.class));
+            overridePendingTransition(R.anim.move_left_out_activity, R.anim.move_right_in_activity);
+            finish();
         });
 
-        tvBtnZodiac.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(DetailOrbital.this, DetailZodiac.class));
-                overridePendingTransition(R.anim.move_left_out_activity, R.anim.move_right_in_activity);
-                finish();
-            }
+        tvBtnZodiac.setOnClickListener(v -> {
+            startActivity(new Intent(DetailOrbital.this, DetailZodiac.class));
+            overridePendingTransition(R.anim.move_left_out_activity, R.anim.move_right_in_activity);
+            finish();
         });
 
-        tvBtnServer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(DetailOrbital.this, DetailServer.class));
-                overridePendingTransition(R.anim.move_left_out_activity, R.anim.move_right_in_activity);
-                finish();
-            }
+        tvBtnServer.setOnClickListener(v -> {
+            startActivity(new Intent(DetailOrbital.this, DetailServer.class));
+            overridePendingTransition(R.anim.move_left_out_activity, R.anim.move_right_in_activity);
+            finish();
         });
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        if(tvSortLive.callOnClick()){
+        if (tvSortLive.callOnClick()) {
             chart.invalidate();
             GraphSuhu(Minute);
-        }
-        else if(tvSortClock.callOnClick()){
+        } else if (tvSortClock.callOnClick()) {
             chart.invalidate();
             retrieveDataClock();
-        }
-        else if(tvSortDay.callOnClick()){
+        } else if (tvSortDay.callOnClick()) {
             chart.invalidate();
             retrieveDataDay();
-        }
-        else {
+        } else {
             chart.invalidate();
             retrieveData();
         }
@@ -206,35 +186,30 @@ public class DetailOrbital extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 ArrayList<Entry> data = new ArrayList<>();
-
-//                ArrayList<Integer> colors = new ArrayList<>();
-
+                ArrayList<Integer> colors = new ArrayList<>();
                 if (dataSnapshot.hasChildren()) {
                     for (DataSnapshot child : dataSnapshot.getChildren()) {
                         DataPoints dataPoints = child.getValue(DataPoints.class);
                         data.add(new Entry(dataPoints.getTime(), dataPoints.getTemperature()));
 
-
-//                        if ( dataPoints.getTemperature() >= 0 && dataPoints.getTemperature() < 20 ){
-//                            colors.add(getResources().getColor( R.color.blueLight));
-//                        } else if ( dataPoints.getTemperature() >= 20 && dataPoints.getTemperature() <= 35 ){
-//                            colors.add(getResources().getColor( R.color.blue_light));
-//                        } else if ( dataPoints.getTemperature() > 35 && dataPoints.getTemperature() <= 100 ){
-//                            colors.add(getResources().getColor( R.color.hot_orange));
-//                        }
-
-
+                        if (dataPoints.getTemperature() >= 0 && dataPoints.getTemperature() < 20) {
+                            colors.add(getResources().getColor(R.color.blueLight));
+                        } else if (dataPoints.getTemperature() >= 20 && dataPoints.getTemperature() <= 35) {
+                            colors.add(getResources().getColor(R.color.blue_light));
+                        } else if (dataPoints.getTemperature() > 35 && dataPoints.getTemperature() <= 100) {
+                            colors.add(getResources().getColor(R.color.hot_orange));
+                        }
 
                     }
                     showChart(data);
-//                    lineDataSet.setColors(colors);
-//                    if (limit == 20) {
-//                        lineDataSet.setDrawCircles(true);
-//                        lineDataSet.setCircleColors(colors);
-//                        lineDataSet.setCircleSize(1.5f);
-//                    } else {
-//                        lineDataSet.setDrawCircles(false);
-//                    }
+                    lineDataSet.setColors(colors);
+                    if (limit == 20) {
+                        lineDataSet.setDrawCircles(true);
+                        lineDataSet.setCircleColors(colors);
+                        lineDataSet.setCircleSize(1.5f);
+                    } else {
+                        lineDataSet.setDrawCircles(false);
+                    }
                     chart.invalidate();
                 } else {
                     chart.clear();
@@ -254,12 +229,12 @@ public class DetailOrbital extends AppCompatActivity {
         lineDataSet.setLabel("DataSet 1");
         lineDataSet.setDrawFilled(true);
 
-//        if (Utils.getSDKInt() >= 18) {
-//            Drawable drawable = ContextCompat.getDrawable(this, R.drawable.fade_blue_light);
-//            lineDataSet.setFillDrawable(drawable);
-//        } else {
-//            lineDataSet.setFillAlpha(5);
-//        }
+        if (Utils.getSDKInt() >= 18) {
+            Drawable drawable = ContextCompat.getDrawable(this, R.drawable.fade_blue_light);
+            lineDataSet.setFillDrawable(drawable);
+        } else {
+            lineDataSet.setFillAlpha(5);
+        }
 
         lineDataSet.setLineWidth(1.5f);
 
@@ -293,12 +268,12 @@ public class DetailOrbital extends AppCompatActivity {
         yAxisL.setDrawGridLines(false);
         yAxisL.setDrawLabels(false);
 
-//        yAxisL.setAxisMinimum(15);
-//        yAxisL.setAxisMaximum(45);
+        yAxisL.setAxisMinimum(15);
+        yAxisL.setAxisMaximum(45);
 
-//        MyMarkerView mv = new MyMarkerView(this, R.layout.custom_marker_view);
-//        mv.setChartView(chart);
-//        chart.setMarker(mv);
+        MyMarkerView mv = new MyMarkerView(this, R.layout.custom_marker_view);
+        mv.setChartView(chart);
+        chart.setMarker(mv);
 
         chart.getLegend().setEnabled(false);
         chart.getDescription().setEnabled(false);
@@ -309,6 +284,6 @@ public class DetailOrbital extends AppCompatActivity {
         chart.clear();
         chart.setData(lineData);
         chart.invalidate();
-        chart.moveViewTo(lineData.getEntryCount(),50L, YAxis.AxisDependency.LEFT);
+        chart.moveViewTo(lineData.getEntryCount(), 50L, YAxis.AxisDependency.LEFT);
     }
 }
